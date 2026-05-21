@@ -1,0 +1,21 @@
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Database & Storage folders
+app_data/
+uploads/
+chroma_db/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

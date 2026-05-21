@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* Global Font Overrides */
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', sans-serif !important;
+    background-color: #0d0f14 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Titles and Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(22, 27, 38, 0.7) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 20px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(99, 102, 241, 0.35) !important;
+    box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Interactive Dashboard Metrics */
+.metrics-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
+}
+
+.metric-card {
+    background: rgba(30, 41, 59, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 18px !important;
+    text-align: left !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.metric-card:hover {
+    border-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+.metric-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 12px !important;
+}
+
+.metric-value {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    font-family: 'Outfit', sans-serif !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.metric-label {
+    font-size: 13px !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* AI Study Heatmap Grid */
+.heatmap-container {
+    background: rgba(22, 27, 38, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.heatmap-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    max-width: 100% !important;
+}
+
+.heatmap-cell {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 3px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.heatmap-cell:hover {
+    transform: scale(1.2) !important;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.5) !important;
+    z-index: 10 !important;
+}
+
+.level-0 { background-color: #1e293b !important; }
+.level-1 { background-color: #0e3f27 !important; }
+.level-2 { background-color: #006d32 !important; }
+.level-3 { background-color: #26a641 !important; }
+.level-4 { background-color: #39d353 !important; }
+
+/* AI Chat Message Bubbles */
+.chat-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 10px !important;
+}
+
+.chat-bubble {
+    display: flex !important;
+    padding: 16px 20px !important;
+    border-radius: 14px !important;
+    max-width: 85% !important;
+    line-height: 1.6 !important;
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
+    animation: fadeIn 0.4s ease !important;
+}
+
+.chat-bubble-user {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.15)) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    color: #f8fafc !important;
+    align-self: flex-end !important;
+    border-bottom-right-radius: 2px !important;
+}
+
+.chat-bubble-assistant {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #e2e8f0 !important;
+    align-self: flex-start !important;
+    border-bottom-left-radius: 2px !important;
+}
+
+/* Citations inside Assistant Chat */
+.citation-container {
+    margin-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding-top: 8px !important;
+}
+
+.citation-badge {
+    display: inline-block !important;
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #818cf8 !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    margin-right: 6px !important;
+    margin-top: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.citation-badge:hover {
+    background: rgba(99, 102, 241, 0.3) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Custom 3D Flip Flashcards */
+.flashcard-wrapper {
+    perspective: 1000px !important;
+    width: 100% !important;
+    height: 220px !important;
+    cursor: pointer !important;
+    margin-bottom: 20px !important;
+}
+
+.flashcard-inner {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-style: preserve-3d !important;
+}
+
+.flashcard-wrapper:hover .flashcard-inner {
+    border-color: rgba(168, 85, 247, 0.5) !important;
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px !important;
+}
+
+.flashcard-front {
+    background: radial-gradient(circle at 10% 20%, rgba(22, 27, 38, 0.9) 0%, rgba(30, 41, 59, 0.95) 90%) !important;
+    color: white !important;
+}
+
+.flashcard-back {
+    background: radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.15) 0%, rgba(22, 27, 38, 0.95) 90%) !important;
+    color: #e2e8f0 !important;
+    transform: rotateY(180deg) !important;
+}
+
+/* Sidebar Custom Styling */
+section[data-testid="stSidebar"] {
+    background-color: #090b0f !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding-top: 15px !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+::-webkit-scrollbar-track {
+    background: #0d0f14 !important;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b !important;
+    border-radius: 4px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155 !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease forwards !important;
+}
