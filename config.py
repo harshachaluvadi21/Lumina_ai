@@ -24,6 +24,11 @@ MONGODB_URI = os.getenv("MONGODB_URI", "")
 MONGODB_DATABASE = os.getenv("MONGODB_DATABASE", "ai_summarizer")
 CHROMA_DB_DIR = str(CHROMA_DIR)
 
+# Chroma Cloud (Optional - falls back to local PersistentClient if not fully configured)
+CHROMA_API_KEY = os.getenv("CHROMA_API_KEY", "")
+CHROMA_TENANT = os.getenv("CHROMA_TENANT", "")
+CHROMA_DATABASE = os.getenv("CHROMA_DATABASE", "")
+
 # SQLite fallback path
 SQLITE_DB_PATH = str(APP_DATA_DIR / "local_storage.db")
 
@@ -38,3 +43,6 @@ def is_groq_available() -> bool:
 
 def is_mongodb_configured() -> bool:
     return bool(MONGODB_URI)
+
+def is_chroma_cloud_configured() -> bool:
+    return bool(CHROMA_API_KEY and CHROMA_TENANT and CHROMA_DATABASE)

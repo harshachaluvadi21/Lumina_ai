@@ -1,3 +1,13 @@
+# Crucial override for Streamlit Cloud deployment:
+# Streamlit Cloud's Debian environment has an outdated sqlite3 system library.
+# We override it with pysqlite3-binary before importing chromadb or any other modules.
+import sys
+try:
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass
+
 import streamlit as st
 import os
 from config import BASE_DIR

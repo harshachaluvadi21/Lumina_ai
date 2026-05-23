@@ -1,15 +1,21 @@
 import chromadb
 from chromadb.utils import embedding_functions
-try:
-    from langchain_text_splitters import RecursiveCharacterTextSplitter
-except ImportError:
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import config
 
 class VectorManager:
     def __init__(self):
-        # Setup persistent client
-        self.chroma_client = chromadb.PersistentClient(path=config.CHROMA_DB_DIR)
+        # Setup client (Chroma Cloud or Local Persistent)
+        if config.is_chroma_cloud_configured():
+            print(f"Connecting to Chroma Cloud (Tenant: {config.CHROMA_TENANT}, DB: {config.CHROMA_DATABASE})...")
+            self.chroma_client = chromadb.CloudClient(
+                tenant=config.CHROMA_TENANT,
+                database=config.CHROMA_DATABASE,
+                api_key=config.CHROMA_API_KEY
+            )
+        else:
+            # Setup persistent client
+            self.chroma_client = chromadb.PersistentClient(path=config.CHROMA_DB_DIR)
         
         # Use ChromaDB's default embedding function (downloads and runs MiniLM locally - 100% free and fast)
         self.embedding_function = embedding_functions.DefaultEmbeddingFunction()
