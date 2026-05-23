@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .chat-bubble {
-    display: flex !important;
+    display: block !important;
     padding: 16px 20px !important;
     border-radius: 14px !important;
     max-width: 85% !important;
