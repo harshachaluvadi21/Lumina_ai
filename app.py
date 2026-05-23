@@ -51,20 +51,42 @@ from views.chat_view import render_chat_arena
 # --- Simple Name Entry Welcome Gate ---
 if not st.session_state.username:
     st.markdown("<br/><br/>", unsafe_allow_html=True)
-    c1, c2, c3 = st.columns([3, 4, 3])
+    c1, c2, c3 = st.columns([2.2, 5.6, 2.2])
     
     with c2:
-        st.markdown("<div class='glass-card' style='text-align:center;'>", unsafe_allow_html=True)
         st.markdown(
             """
-            <h1 style='background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align:center; font-size:42px; margin-bottom:0;'>Lumina AI</h1>
-            <p style='color:#64748b; font-size:14px; margin-top:4px; margin-bottom:24px;'>Multimodal Content Summarizer & RAG Study Suite</p>
+            <div class='glass-card' style='text-align:center; padding: 44px !important; border: 1px solid rgba(99, 102, 241, 0.25) !important; box-shadow: 0 25px 60px rgba(99, 102, 241, 0.18) !important;'>
+                <div style='width: 76px; height: 76px; border-radius: 38px; background: linear-gradient(135deg, #6366f1, #a855f7); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 0 24px rgba(99, 102, 241, 0.45);'>
+                    <span style='font-size: 36px; filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.25));'>⚡</span>
+                </div>
+                <h1 style='background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align:center; font-size:52px; margin-bottom:4px; font-family: "Outfit", sans-serif; letter-spacing: -0.03em;'>Lumina AI</h1>
+                <p style='color:#94a3b8; font-size:16px; margin-top:0px; margin-bottom:36px; font-weight:400;'>Next-Gen Multimodal Summarizer & Cloud RAG Suite</p>
+                
+                <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; text-align: left;'>
+                    <div style='background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); padding: 14px; border-radius: 12px; transition: border-color 0.2s;'>
+                        <strong style='color: white; font-size: 13px; display: block; margin-bottom: 4px;'>🤖 Cloud RAG Chat</strong>
+                        <span style='color: #64748b; font-size: 11px; line-height: 1.4; display: block;'>Instant answers with strict semantic citations.</span>
+                    </div>
+                    <div style='background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); padding: 14px; border-radius: 12px;'>
+                        <strong style='color: white; font-size: 13px; display: block; margin-bottom: 4px;'>☁️ Hosted Vector DB</strong>
+                        <span style='color: #64748b; font-size: 11px; line-height: 1.4; display: block;'>Persistent indices powered by Chroma Cloud.</span>
+                    </div>
+                    <div style='background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); padding: 14px; border-radius: 12px;'>
+                        <strong style='color: white; font-size: 13px; display: block; margin-bottom: 4px;'>📝 Adaptive Summaries</strong>
+                        <span style='color: #64748b; font-size: 11px; line-height: 1.4; display: block;'>Custom outlines adapted to student or developer modes.</span>
+                    </div>
+                    <div style='background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); padding: 14px; border-radius: 12px;'>
+                        <strong style='color: white; font-size: 13px; display: block; margin-bottom: 4px;'>📊 Study Analytics</strong>
+                        <span style='color: #64748b; font-size: 11px; line-height: 1.4; display: block;'>Visual heatmaps, logs, and interaction dashboards.</span>
+                    </div>
+                </div>
             """,
             unsafe_allow_html=True
         )
         
         st.markdown("<div style='text-align:left;'>", unsafe_allow_html=True)
-        name_input = st.text_input("Enter your name to enter the workspace:", placeholder="Harsh")
+        name_input = st.text_input("Enter your name to unlock the workspace:", placeholder="Harsh")
         st.markdown("</div>", unsafe_allow_html=True)
         st.markdown("<br/>", unsafe_allow_html=True)
         
